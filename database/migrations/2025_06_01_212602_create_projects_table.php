@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('description')->nullable();
+            $table->string('status')->default('active'); // e.g., active, completed, archived 
+            $table->string('link')->nullable(); // URL to the project or repository
+            $table->string('image')->nullable(); // Path to the project's image
             $table->timestamps();
         });
     }
